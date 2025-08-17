@@ -88,10 +88,9 @@ public class GlobalExceptionHandler {
         String message = "Invalid data format";
         String fieldName = "unknown";
 
-        if (e.getCause() instanceof InvalidFormatException) {
-            InvalidFormatException invalidFormat = (InvalidFormatException) e.getCause();
+        if (e.getCause() instanceof InvalidFormatException invalidFormat) {
             fieldName = invalidFormat.getPath().isEmpty() ? "unknown" :
-                       invalidFormat.getPath().get(invalidFormat.getPath().size() - 1).getFieldName();
+                       invalidFormat.getPath().getLast().getFieldName();
 
             if (invalidFormat.getTargetType().isEnum()) {
                 Object[] enumValues = invalidFormat.getTargetType().getEnumConstants();
@@ -122,10 +121,9 @@ public class GlobalExceptionHandler {
     public ResponseErrorDTO handleGenericException(Exception e, HttpServletRequest request) {
         String path = request.getRequestURI();
 
-        String rootCauseMessage = "";
         if (e.getCause() != null) {
-            rootCauseMessage = " - Root cause: " + e.getCause().getClass().getSimpleName()
-                    + " - Root message: " + e.getCause().getMessage();
+            e.getCause();
+            e.getCause();
         }
 
         return ResponseErrorDTO.of(

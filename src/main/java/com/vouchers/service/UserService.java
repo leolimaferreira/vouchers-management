@@ -8,7 +8,6 @@ import com.vouchers.mapper.UserMapper;
 import com.vouchers.model.User;
 import com.vouchers.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
