@@ -8,6 +8,7 @@ import com.vouchers.exception.InvalidFieldException;
 import com.vouchers.exception.NotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -26,6 +27,30 @@ public class GlobalExceptionHandler {
     public ResponseErrorDTO handleDuplicatedRegistryException(DuplicatedRegistryException e, HttpServletRequest request) {
         String path = request.getRequestURI();
         return ResponseErrorDTO.conflict(e.getMessage(), path);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseErrorDTO handleDataIntegrityViolationException(DataIntegrityViolationException e, HttpServletRequest request) {
+        String path = request.getRequestURI();
+        String message = "Data integrity violation";
+        String fieldName = "unknown";
+
+        if (e.getMessage() != null) {
+            if (e.getMessage().contains("users_email_key")) {
+                message = "Email already exists";
+                fieldName = "email";
+            } else if (e.getMessage().contains("duplicate key")) {
+                message = "Duplicate entry detected";
+            }
+        }
+
+        return ResponseErrorDTO.of(
+                HttpStatus.CONFLICT,
+                "Data integrity error",
+                List.of(new FieldErrorDTO(fieldName, message)),
+                path
+        );
     }
 
     @ExceptionHandler(InvalidFieldException.class)

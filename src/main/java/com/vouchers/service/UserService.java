@@ -8,6 +8,7 @@ import com.vouchers.exception.NotFoundException;
 import com.vouchers.mapper.UserMapper;
 import com.vouchers.model.User;
 import com.vouchers.repository.UserRepository;
+import com.vouchers.validator.UserValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +22,11 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final UserValidator userValidator;
 
     public UserSearchResultDTO create(CreateUserDTO dto) {
         User user = userMapper.toUser(dto);
-        validateCreationAndUpdate(user);
+        userValidator.validateCreationAndUpdate(user);
         userRepository.save(user);
         return userMapper.toUserSearchResultDTO(user);
     }
@@ -43,28 +45,12 @@ public class UserService {
 
     public void updateUser(UUID id, UpdateUserDTO dto) {
         User user = userRepository.findById(id).orElseThrow( () -> new NotFoundException("User with ID: " + id + " not found"));
-        validateCreationAndUpdate(user);
         userMapper.updateUserFromDto(dto, user);
+        userValidator.validateCreationAndUpdate(user);
         userRepository.save(user);
     }
 
     public void deleteUser(UUID id) {
         userRepository.deleteById(id);
-    }
-
-    private void validateCreationAndUpdate(User user) {
-        if (isDuplicateUser(user)) {
-            throw new DuplicatedRegistryException("User already registered");
-        }
-    }
-
-    private boolean isDuplicateUser(User user) {
-        Optional<User> userOptional = userRepository.findByEmail(user.getEmail());
-
-        if (user.getId() == null) {
-            return userOptional.isPresent();
-        }
-
-        return !user.getId().equals(userOptional.get().getId());
     }
 }
