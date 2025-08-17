@@ -5,6 +5,7 @@ import com.vouchers.dto.error.FieldErrorDTO;
 import com.vouchers.dto.error.ResponseErrorDTO;
 import com.vouchers.exception.DuplicatedRegistryException;
 import com.vouchers.exception.InvalidFieldException;
+import com.vouchers.exception.NotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -107,6 +108,13 @@ public class GlobalExceptionHandler {
                 List.of(new FieldErrorDTO(fieldName, message)),
                 path
         );
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseErrorDTO handleNotFoundException(NotFoundException e, HttpServletRequest request) {
+        String path = request.getRequestURI();
+        return ResponseErrorDTO.of(HttpStatus.NOT_FOUND, e.getMessage(), List.of(), path);
     }
 
     @ExceptionHandler(Exception.class)

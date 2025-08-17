@@ -304,3 +304,90 @@
 2025-08-17T00:41:47.258-03:00  INFO 21488 --- [Vouchers-Managemet] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-08-17T00:41:47.259-03:00  INFO 21488 --- [Vouchers-Managemet] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2025-08-17T00:41:47.281-03:00  WARN 21488 --- [Vouchers-Managemet] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.vouchers.dto.user.UserSearchResultDTO> com.vouchers.controller.impl.UserControllerImpl.createUser(com.vouchers.dto.user.CreateUserDTO): [Field error in object 'createUserDTO' on field 'password': rejected value [L23!]; codes [Password.createUserDTO.password,Password.password,Password.java.lang.String,Password]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createUserDTO.password,password]; arguments []; default message [password]]; default message [Password must be between 8 and 20 characters and contain at least one uppercase letter, one lowercase letter, one digit, and one special character]] ]
+2025-08-17T19:12:47.818-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : Starting VouchersManagemetApplication using Java 21.0.8 with PID 20524 (C:\ProjetosJava\Vouchers-Managemet\target\classes started by Léo in C:\ProjetosJava\Vouchers-Managemet)
+2025-08-17T19:12:47.820-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-17T19:12:47.854-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-17T19:12:47.854-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-17T19:12:47.863-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file C:\ProjetosJava\Vouchers-Managemet\compose.yaml
+2025-08-17T19:12:48.637-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2025-08-17T19:12:49.106-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-17T19:12:49.153-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2025-08-17T19:12:49.486-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-17T19:12:49.496-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-17T19:12:49.497-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-17T19:12:49.530-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-17T19:12:49.530-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 885 ms
+2025-08-17T19:12:49.627-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-17T19:12:49.788-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4cdc4b2
+2025-08-17T19:12:49.789-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-17T19:12:49.821-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-17T19:12:49.870-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-17T19:12:49.898-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-17T19:12:50.128-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-17T19:12:50.211-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-17T19:12:50.887-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-17T19:12:50.890-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-17T19:12:51.169-03:00  WARN 20524 --- [Vouchers-Managemet] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-17T19:12:51.419-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-17T19:12:51.444-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-17T19:12:51.449-03:00  INFO 20524 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : Started VouchersManagemetApplication in 4.006 seconds (process running for 5.022)
+2025-08-17T19:13:52.057-03:00  INFO 20524 --- [Vouchers-Managemet] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-17T19:13:52.057-03:00  INFO 20524 --- [Vouchers-Managemet] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-17T19:13:52.058-03:00  INFO 20524 --- [Vouchers-Managemet] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-17T19:13:55.459-03:00  WARN 20524 --- [Vouchers-Managemet] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.vouchers.exception.NotFoundException: User with ID: 024f3e1e-6662-4a7e-a152-0ed96a2dcb3c not found]
+2025-08-17T19:14:48.938-03:00  INFO 20524 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-17T19:14:48.942-03:00  INFO 20524 --- [Vouchers-Managemet] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-17T19:14:48.945-03:00  INFO 20524 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-17T19:14:48.947-03:00  WARN 20524 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2025-08-17T19:14:48.947-03:00  INFO 20524 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-17T19:14:48.949-03:00  INFO 20524 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-17T19:16:54.536-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : Starting VouchersManagemetApplication using Java 21.0.8 with PID 20432 (C:\ProjetosJava\Vouchers-Managemet\target\classes started by Léo in C:\ProjetosJava\Vouchers-Managemet)
+2025-08-17T19:16:54.538-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-17T19:16:54.568-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-17T19:16:54.568-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-17T19:16:54.578-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file C:\ProjetosJava\Vouchers-Managemet\compose.yaml
+2025-08-17T19:16:55.258-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2025-08-17T19:16:55.672-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-17T19:16:55.715-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2025-08-17T19:16:56.013-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-17T19:16:56.023-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-17T19:16:56.023-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-17T19:16:56.053-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-17T19:16:56.054-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 788 ms
+2025-08-17T19:16:56.135-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-17T19:16:56.236-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3add773e
+2025-08-17T19:16:56.238-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-17T19:16:56.265-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-17T19:16:56.300-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-17T19:16:56.323-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-17T19:16:56.514-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-17T19:16:56.575-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-17T19:16:57.194-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-17T19:16:57.197-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-17T19:16:57.420-03:00  WARN 20432 --- [Vouchers-Managemet] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-17T19:16:57.655-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-17T19:16:57.680-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-17T19:16:57.685-03:00  INFO 20432 --- [Vouchers-Managemet] [restartedMain] c.vouchers.VouchersManagemetApplication  : Started VouchersManagemetApplication in 3.487 seconds (process running for 3.972)
+2025-08-17T19:17:20.106-03:00  INFO 20432 --- [Vouchers-Managemet] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-17T19:17:20.106-03:00  INFO 20432 --- [Vouchers-Managemet] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-17T19:17:20.107-03:00  INFO 20432 --- [Vouchers-Managemet] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-17T19:17:26.520-03:00  INFO 20432 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-17T19:17:26.523-03:00  INFO 20432 --- [Vouchers-Managemet] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-17T19:17:26.526-03:00  INFO 20432 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-17T19:17:26.529-03:00  WARN 20432 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2025-08-17T19:17:26.530-03:00  INFO 20432 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-17T19:17:26.533-03:00  INFO 20432 --- [Vouchers-Managemet] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
