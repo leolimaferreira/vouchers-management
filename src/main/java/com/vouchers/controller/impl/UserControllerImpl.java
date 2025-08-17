@@ -1,6 +1,7 @@
-package com.vouchers.controller;
+package com.vouchers.controller.impl;
 
-import com.vouchers.dto.CreateUserDTO;
+import com.vouchers.controller.GenericController;
+import com.vouchers.dto.user.CreateUserDTO;
 import com.vouchers.mapper.UserMapper;
 import com.vouchers.model.User;
 import com.vouchers.service.UserService;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class UserController {
+public class UserControllerImpl implements GenericController {
 
     private final UserService userService;
     private final UserMapper userMapper;
