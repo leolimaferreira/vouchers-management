@@ -31,7 +31,7 @@ public class Voucher {
     private BigDecimal value;
 
     @Column(name = "expiration_date", unique = false)
-    private LocalDate expirationDate;
+    private LocalDate expirationDate = LocalDate.now().plusDays(1);
 
     @Column(name = "rules", unique = false, length = 1000)
     private List<String> rules;
