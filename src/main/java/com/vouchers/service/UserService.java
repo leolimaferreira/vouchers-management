@@ -1,6 +1,7 @@
 package com.vouchers.service;
 
 import com.vouchers.dto.user.CreateUserDTO;
+import com.vouchers.dto.user.UpdateUserDTO;
 import com.vouchers.dto.user.UserSearchResultDTO;
 import com.vouchers.exception.DuplicatedRegistryException;
 import com.vouchers.exception.NotFoundException;
@@ -38,6 +39,13 @@ public class UserService {
                 .stream()
                 .map(userMapper::toUserSearchResultDTO)
                 .toList();
+    }
+
+    public void updateUser(UUID id, UpdateUserDTO dto) {
+        User user = userRepository.findById(id).orElseThrow( () -> new NotFoundException("User with ID: " + id + " not found"));
+        validateCreationAndUpdate(user);
+        userMapper.updateUserFromDto(dto, user);
+        userRepository.save(user);
     }
 
     private void validateCreationAndUpdate(User user) {

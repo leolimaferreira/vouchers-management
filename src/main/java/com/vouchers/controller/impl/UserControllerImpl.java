@@ -2,6 +2,7 @@ package com.vouchers.controller.impl;
 
 import com.vouchers.controller.GenericController;
 import com.vouchers.dto.user.CreateUserDTO;
+import com.vouchers.dto.user.UpdateUserDTO;
 import com.vouchers.dto.user.UserSearchResultDTO;
 import com.vouchers.service.UserService;
 import jakarta.validation.Valid;
@@ -21,7 +22,7 @@ public class UserControllerImpl implements GenericController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<UserSearchResultDTO> createUser(@Valid @RequestBody CreateUserDTO dto) {
+    public ResponseEntity<UserSearchResultDTO> create(@RequestBody @Valid CreateUserDTO dto) {
         UserSearchResultDTO user = userService.create(dto);
         URI location = generateHeaderLocation(user.id());
         return ResponseEntity.created(location)
@@ -36,5 +37,11 @@ public class UserControllerImpl implements GenericController {
     @GetMapping
     public ResponseEntity<List<UserSearchResultDTO>> findAll() {
         return ResponseEntity.ok(userService.findAllUsers());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable UUID id, @RequestBody @Valid UpdateUserDTO dto) {
+        userService.updateUser(id, dto);
+        return ResponseEntity.noContent().build();
     }
 }
