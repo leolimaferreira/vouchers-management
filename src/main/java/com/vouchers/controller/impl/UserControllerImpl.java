@@ -44,4 +44,10 @@ public class UserControllerImpl implements GenericController {
         userService.updateUser(id, dto);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable UUID id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 }

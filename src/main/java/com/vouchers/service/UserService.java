@@ -48,6 +48,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void deleteUser(UUID id) {
+        userRepository.deleteById(id);
+    }
+
     private void validateCreationAndUpdate(User user) {
         if (isDuplicateUser(user)) {
             throw new DuplicatedRegistryException("User already registered");
