@@ -44,4 +44,10 @@ public class CertificationControllerImpl implements GenericController {
         certificationService.updateCertification(id, dto);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable UUID id) {
+        certificationService.deleteCertification(id);
+        return ResponseEntity.noContent().build();
+    }
 }

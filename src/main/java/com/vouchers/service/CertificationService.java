@@ -47,4 +47,10 @@ public class CertificationService {
         certificationValidator.validateCreationAndUpdate(certification);
         certificationRepository.save(certification);
     }
+
+    public void deleteCertification(UUID id) {
+        Certification certification = certificationRepository.findById(id).orElseThrow( () -> new NotFoundException("Certification with ID: " + id + " not found"));
+        certificationValidator.validateDeletion(certification);
+        certificationRepository.delete(certification);
+    }
 }
