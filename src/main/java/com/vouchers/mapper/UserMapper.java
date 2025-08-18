@@ -12,9 +12,7 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-    public User toUser(CreateUserDTO createUserDTO);
-
-    public CreateUserDTO toCreateUserDTO(User user);
+    User toUser(CreateUserDTO createUserDTO);
 
     UserSearchResultDTO toUserSearchResultDTO(User user);
 
