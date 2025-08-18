@@ -41,5 +41,5 @@ public class Voucher {
     @Enumerated(EnumType.STRING)
     @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(columnDefinition = "status")
-    private Status status;
+    private Status status = Status.AVAILABLE;
 }
