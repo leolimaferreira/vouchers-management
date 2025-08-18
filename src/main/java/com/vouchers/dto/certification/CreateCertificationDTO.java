@@ -1,0 +1,9 @@
+package com.vouchers.dto.certification;
+
+import jakarta.validation.constraints.Size;
+
+public record CreateCertificationDTO(
+        @Size(min = 6, max = 6, message = "Code must be 6 characters")
+        String code
+) {
+}
